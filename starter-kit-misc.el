@@ -69,6 +69,7 @@
         ido-max-prospects 10))
 
 (set-default 'indent-tabs-mode nil)
+(setq-default indent-level 2)
 (set-default 'indicate-empty-lines t)
 (set-default 'imenu-auto-rescan t)
 
