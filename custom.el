@@ -61,3 +61,17 @@
 
 ;; update TAGS
 (visit-tags-table "~/pakki/TAGS")
+
+;; fix a fuckup in the ruby mode
+(require 'ruby-mode)
+(defun ruby-mode-set-encoding () () )
+
+;; Animated Startup
+(defconst animate-n-steps 10)
+(defun emacs-reloaded ()
+  (animate-string (concat ";; Initialization successful, welcome to "
+                          (substring (emacs-version) 0 16)
+                          ".")
+                  0 0)
+  (newline-and-indent) (newline-and-indent))
+(add-hook 'after-init-hook 'emacs-reloaded)

@@ -85,33 +85,3 @@
 
 ;;; init.el ends here
 
-;; LOAD CEDET 1.0 tools
-(load "cedet-1.0pre4/common/cedet.el")
-
-;; enable semantic minor modes
-;(semantic-load-enable-code-helpers)
-;(semantic-load-enable-gaudy-code-helpers)
-;(setq semantic-load-turn-useful-things-on t)
-
-(setq semanticdb-default-save-directory "~/pakki/semantic.cache")
-
-;; add ecb installation
-(add-to-list 'load-path
-             "~/elisp/ecb-snap")
-
-(require 'ecb-autoloads)
-
-;; Startup
-(defconst animate-n-steps 10)
-(defun emacs-reloaded ()
-  (animate-string (concat ";; Initialization successful, welcome to "
-                          (substring (emacs-version) 0 16)
-                          ".")
-                  0 0)
-  (newline-and-indent) (newline-and-indent))
-(add-hook 'after-init-hook 'emacs-reloaded)
-
-(put 'upcase-region 'disabled nil)
-
-;; update TAGS
-(visit-tags-table "~/pakki/TAGS")
